@@ -11,9 +11,7 @@ public class User extends GenericEntity {
 
     @Column(nullable = false, unique = true, length = 50)
     private String userName;
-    @Column(columnDefinition = "TEXT")
     private String password;
-    @Column(columnDefinition = "TEXT")
     private String oldPassword;
 
     @ManyToMany
