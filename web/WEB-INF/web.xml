@@ -13,7 +13,7 @@
     </context-param>
     <context-param>
         <param-name>primefaces.THEME</param-name>
-        <param-value>nova-light</param-value>
+        <param-value>luna-amber</param-value>
     </context-param>
     <context-param>
         <param-name>javax.faces.DATETIMECONVERTER_DEFAULT_TIMEZONE_IS_SYSTEM_TIMEZONE</param-name>
@@ -40,6 +40,28 @@
     <welcome-file-list>
         <welcome-file>app/index.xhtml</welcome-file>
     </welcome-file-list>
+
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <realm-name>real_tpcotation</realm-name>
+        <form-login-config>
+            <form-login-page>/app/login.xhtml</form-login-page>
+            <form-error-page>/app/login.xhtml</form-error-page>
+        </form-login-config>
+    </login-config>
+
+    <security-constraint>
+        <display-name>administrator</display-name>
+        <web-resource-collection>
+            <web-resource-name>all</web-resource-name>
+            <description/>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>ADMIN</role-name>
+        </auth-constraint>
+    </security-constraint>
 
     <security-constraint>
         <display-name>Anonymous</display-name>
